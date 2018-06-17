@@ -1,0 +1,13 @@
+RewriteEngine on
+ErrorDocument 404 /trabajophpajax/error404.php
+
+RewriteRule ^historias$ index.php
+RewriteRule ^historia$ historia.php
+
+RewriteRule ^administracion$ administracion.php
+RewriteRule ^perfil$ perfil.php
+
+# API: historias
+
+RewriteRule ^api/historia/(\w+)$ api.php?api_key=$1
+
