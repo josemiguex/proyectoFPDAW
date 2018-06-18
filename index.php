@@ -57,12 +57,8 @@ include "conexion.php";
 			$historias .= " AND usuario_id=".$_SESSION['usuario_id'];
 		}
 
-	if (isset($_GET['busquedahistoria']) && $_GET['busquedahistoria'] != "" && isset($_GET['categoria']) && $_GET['categoria'] != "") {
-		$historias .= " AND";
-	}
-
 	if (isset($_GET['categoria']) && $_GET['categoria'] != "") {
-		$historias .= " categoria_id='".$_GET['categoria']."' ";
+		$historias .= " AND categoria_id='".$_GET['categoria']."' ";
 	}
 
 	if (isset($_GET['ordenapor']) && $_GET['ordenapor'] != "") {

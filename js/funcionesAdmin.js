@@ -585,7 +585,7 @@ $( "#dialogoañadircategoria" ).dialog({
 $(document).on("click",".modificar",function(){
 	idhistoria = $(this).parents().siblings("td.id").attr("id");
 	categoria_id = $(this).parents().siblings("td.categoria").attr("id");
-	imganterior = $(this).parents().siblings("span.imganterior").attr("id");
+	imganterior = $(this).parents().siblings("td.img").attr("id");
 
 	//Para que ponga el campo direccion con su valor
 	$("#titulomodificar").val($(this).parent().siblings("td.titulo").html());

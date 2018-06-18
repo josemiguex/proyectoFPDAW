@@ -96,11 +96,10 @@ $fla = $resultado->fetchAll(PDO::FETCH_ASSOC);
 		echo "<td>".$historia['usuario']."</td>";
 		echo "<td>".$historia['fecha']."</td>";
 		echo "<td>".$historia['notamedia']."</td>";
-		echo "<span class='imganterior' id='".$historia['img']."'></span>";
 		if ($historia['img'] != "") {
-			echo "<td><a href='subidas/img_historias/".$historia['img']."'>Ver</a></td>";
+			echo "<td class='img' id='".$historia['img']."'><a href='subidas/img_historias/".$historia['img']."'>Ver</a></td>";
 		} else {
-			echo "<td></td>";
+			echo "<td class='img' id=''></td>";
 		}
 		echo "<td><button class='borrar'><i class='fas fa-trash-alt'></i> Eliminar</button></td>";
 		echo "<td><button class='modificar'><i class='fas fa-pencil-alt'></i> Modificar</button>";
