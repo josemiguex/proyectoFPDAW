@@ -165,8 +165,14 @@ var idcategoria
                 data:  parametros,
                 url:   'operaciones/categoria_borrar.php',
                 type:  'post',
-                success:  function (data) {				
-					$("#listacategorias").html(data);
+                success:  function (data) {	
+                	if (data == "error") {
+                		$("#info").html("Esta categoria la tiene asignada una o más historias");
+						$("#infomodal").css('display','block');
+                	} else {
+                		window.location.href = "administracion?listacategorias";
+                	}		
+					
 				}
 			});
 			
@@ -383,6 +389,14 @@ $(document).on("click",".pagination li a",function(){
 $(document).on("click",".paginationUsuarios li a",function(){
 	numpage = $(this).data("page");
 	$.post("listausuarios.php",{page:numpage},function(data){$("#listausuarios").html(data);	
+	});
+
+});
+
+//Paginación lista de categorias
+$(document).on("click",".paginationCategorias li a",function(){
+	numpage = $(this).data("page");
+	$.post("listacategorias.php",{page:numpage},function(data){$("#listacategorias").html(data);	
 	});
 
 });

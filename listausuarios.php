@@ -35,7 +35,9 @@
 	    echo $e->getMessage();
 	    die();
 	}
-
+	?>
+	<div id="listausuarios">
+	<?php
 		$fla = $resultado->fetchAll(PDO::FETCH_ASSOC);
 	// Pintamos una tabla con los datos de cada usuario
 	echo "<table id='usuariostabla'>";
@@ -66,6 +68,7 @@
 	echo "</table>";
 
 ?>
+</div>
 <!-- Sistema de paginación -->
 <ul class="paginationUsuarios">
 <?php 

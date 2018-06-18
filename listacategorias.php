@@ -21,7 +21,7 @@
 	$limit = " LIMIT ". $regcomienzo . "," . $numregxpagina;
 
 	// Recogemos de la base de datos todos los datos de los usuarios
-	$sql = "SELECT categorias.* FROM categorias ORDER BY ID ASC" ;
+	$sql = "SELECT categorias.* FROM categorias ORDER BY ID DESC" ;
 
 
 	try {
@@ -37,6 +37,9 @@
 	}
 
 		$fla = $resultado->fetchAll(PDO::FETCH_ASSOC);
+	?>
+	<div id="listacategorias">
+	<?php
 	// Pintamos una tabla con los datos de cada usuario
 	echo "<table id='categoriastabla'>";
 	echo "<tr>";
@@ -58,8 +61,9 @@
 	echo "</table>";
 
 ?>
+</div>
 <!-- Sistema de paginación -->
-<ul class="paginationUsuarios">
+<ul class="paginationCategorias">
 <?php 
 if ($paginaactual!=1){?>
   <li><a href="#" data-page="1">Primero</a></li>

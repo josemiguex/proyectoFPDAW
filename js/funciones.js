@@ -35,7 +35,7 @@ $(document).on('click','#puntuar', function() {
 	if (isNumber($("#nota").val()) && $("#nota").val() >= 0 && $("#nota").val() <= 10) {
 		var parametros = {
 			puntuacion: $("#nota").val(),
-			historia_id: $(this).parent().siblings("h2.titulo").attr('data-idhistoria'),
+			historia_id: $("#contenedor").children().siblings("h2.titulo").attr('data-idhistoria'),
 			usuario_id: usuario_id
 		};
 		$.ajax({
@@ -62,7 +62,7 @@ $(document).on('click','#puntuar', function() {
 $(document).on('click','#eliminarpuntuacion', function() {
 
 	var parametros = {
-		historia_id: $(this).parent().siblings("h2.titulo").attr('data-idhistoria'),
+		historia_id: $("#contenedor").children().siblings("h2.titulo").attr('data-idhistoria'),
 		usuario_id: usuario_id
 	};
 
@@ -233,7 +233,7 @@ $(document).ready(function() {
 					$("#info").html("Ya existe una historia con ese título, elija otro");
 					$("#infomodal").css('display','block');
 				} else {
-					location.reload();
+					window.location.href = "historias";
 
 				}
 			}
